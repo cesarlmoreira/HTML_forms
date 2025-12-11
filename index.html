@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Adicionado a tag meta description para melhoria de SEO, consta como um resumo na página de busca. -->
+    <meta name="description" content="Participe da pesquisa cultural da Culturama em menos de 2 minutos.">
+    <!-- Para melhoria de SEO é recomendado utilizar a tag meta robots (impacto médio/alto), porém neste caso o recomendado, se for utilizar a tag é deixar o content como noindex e nofollow para que a página não seja indexada nos buscadores e impedir que os buscadores sigam links internos. -->
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- A tag meta Open Graph(OG) é utilizada para definir como o link aparece em redes sociais. -->
+    <meta property="og:title" content="Pesquisa Culturama 2025">
+    <meta property="og:description" content="Compartilhe sua opinião.">
+    <meta property="og:image" content="./assets/logo-culturama.png">
+
+    <link rel="icon" href="./assets/culturama-favico.png">
+    <link rel="stylesheet" href="./styles/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Work+Sans&display=swap" rel="stylesheet">
+    <title>Pesquisa - Culturama</title>
+</head>
+
+<body>
+    <main>
+        <header>
+            <img src="./assets/logo-culturama.png" alt="Logo da culturama.">
+            <h1>Pesquisa de opinião</h1>
+        </header>
+        <section>
+
+            <!-- Precisa definir o método, no caso get, que transfere a informação para a URL -->
+            <form action="sucesso.html" method="get">
+
+                <!-- Fieldset serve para gerar um contorno na região dos dados pessoais -->
+                <fieldset>
+                    <legend>Dados pessoais</legend>
+
+                    <label for="name">Nome:</label>
+                    <!-- No campo ID, utilizar um nome diferente do name no input. -->
+                    <input type="text" id="name" name="userName" required>
+                    <br>
+                    <label for="age">Idade:</label>
+                    <input type="number" id="age" name="userAge" min="12" max="100" required>
+                    <br>
+                    <label for="birthDate">Data de nascimento:</label>
+                    <input type="date" id="birthDate" name="userBirthDate">
+                    <br>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="userEmail" required>
+                    <br>
+                    <label for="phone">Telefone:</label>
+                    <!-- No pattern, é definido entre [] o números que serão utilizados no caso de 0 à 9 e entre {}, o total de números, no caso 11. -->
+                    <input type="tel" id="phone" name="userPhoneNumber" pattern="[0-9]{11}" placeholder="DDD + 9 dígitos" aria-describedby="phoneHelp">
+                    <!-- Adicionado a tag small para aprimorar a acessibilidade com o atributo aria, conectado com o input através da ID. -->
+                    <small id="phoneHelp">Preencha com 11 dígitos no formato DDD + 9 dígitos sem espaços ou hífen.</small>
+                    <br>
+                    <label for="image">Upload de foto:</label>
+                    <input type="file" id="image" accept="image/*" name="userImage" aria-describedby="imagemHelp">
+                    <small id="imageHelp">Envie uma foto no formato "PNG" ou "JPEG".</small>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Perfil</legend>
+                    <p>Gênero:</p>
+                    <!-- Neste caso, é necessário informar o valor (value), visto que é um campo de seleção o nós devemos informar o valor da opção que será enviado para a URL. -->
+                    <input type="radio" id="female" name="userGender" value="Feminino">
+                    <label for="female">Feminino</label>
+
+                    <input type="radio" id="male" name="userGender" value="Masculino">
+                    <label for="male">Masculino</label>
+
+                    <input type="radio" id="notInformed" name="userGender" value="notInformed">
+                    <label for="notInformed">Prefiro não informar</label>
+                    <br>
+
+                    <label for="maritalStatus">Estado civil:</label>
+                    <select id="maritalStatus" name="userMaritalStatus">
+                        <option value="notInformed">Selecione
+                        </option>
+                        <option value="casado">Casado
+                        </option>
+                        <option value="solteiro">Solteiro
+                        </option>
+                        <option value="divorciado">Divorciado
+                        </option>
+                        <option value="casado">União Estável
+                        </option>
+                    </select>
+                    <br>
+
+                    <label for="state">Estado:</label>
+                    <select id="state" name="userState" required>
+                        <option value="notInformed">Selecione</option>
+                        <option value="acre">Acre</option>
+                        <option value="alagoas">Alagoas</option>
+                        <option value="amapa">Amapá</option>
+                        <option value="amazonas">Amazonas</option>
+                        <option value="bahia">Bahia</option>
+                        <option value="ceara">Ceará</option>
+                        <option value="distritoFederal">Distrito Federal</option>
+                        <option value="espiritoSanto">Espirito Santo</option>
+                        <option value="goias">Goiás</option>
+                        <option value="maranhao">Maranhão</option>
+                        <option value="matoGrossoDoSul">Mato Grosso do Sul</option>
+                        <option value="matoGrosso">Mato Grosso</option>
+                        <option value="minasGerais">Minas Gerais</option>
+                        <option value="para">Pará</option>
+                        <option value="paraiba">Paraíba</option>
+                        <option value="parana">Paraná</option>
+                        <option value="pernambuco">Pernambuco</option>
+                        <option value="piaui">Piauí</option>
+                        <option value="rioDeJaneiro">Rio de Janeiro</option>
+                        <option value="rioGrandeDoNorte">Rio Grande do Norte</option>
+                        <option value="rioGrandeDoSul">Rio Grande do Sul</option>
+                        <option value="rondonia">Rondônia</option>
+                        <option value="roraima">Roraima</option>
+                        <option value="santaCatarina">Santa Catarina</option>
+                        <option value="saoPaulo">São Paulo</option>
+                        <option value="sergipe">Sergipe</option>
+                        <option value="tocantins">Tocantins</option>
+                    </select>
+
+                    <label for="city">Cidade:</label>
+                    <input type="text" id="city" name="userCity">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Hábitos</legend>
+                    <p>Redes Sociais:</p>
+                    <!-- Para fazer uma categoria que possibilite marcar multiplas opções é necessário utilizar o type="checkbox" -->
+                    <input type="checkbox" id="instagram" name="social" value="instagram">
+                    <label for="instagram">Instagram</label>
+                    <br>
+                    <input type="checkbox" id="facebook" name="social" value="facebook">
+                    <label for="facebook">Facebook</label>
+                    <br>
+                    <input type="checkbox" id="linkedin" name="social" value="linkedin">
+                    <label for="linkedin">LinkedIn</label>
+                    <br>
+                    <input type="checkbox" id="x" name="social" value="x">
+                    <label for="x">X</label>
+                    <br>
+
+                    <label for="musicStyle">Estilo Musical:</label>
+                    <!-- Adicionado a tag list dentro do input. -->
+                    <input type="text" id="musicStyle" name="userMusicStyle" list="styleTypes">
+                    <!-- Para a utilização de autocomplete, é necessário utilizar a tag datalist e após é adicionado ID de list do input. -->
+                    <datalist id="styleTypes">
+                        <option value="Rock">
+                        <option value="Pop">
+                        <option value="Samba">
+                        <option value="Sertanejo">
+                    </datalist>
+
+                    <br>
+                    <label for="favoriteColor">Cor Favorita:</label>
+                    <input type="color" id="favoriteColor" name="userFavoriteColor">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Confirmações</legend>
+
+                    <input type="checkbox" name="userLgpd" id="userLgpdTerm" value="accepted" required>
+                    <label for="userLgpdTerm">Eu aceito participar da pesquisa.</label>
+                    <br>
+
+                    <input type="checkbox" name="userGetResult" id="getResult" value="accepted">
+                    <label for="getResult">Desejo receber o resultado por e-mail.</label>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Opinião</legend>
+
+                    <p>Qual a sua opinião sobre a qualidade do nosso serviço?</p>
+
+                    <input type="radio" id="otima" name="userSatisfaction" value="otimo">
+                    <label for="otima">Ótima</label>
+                    <br>
+                    <input type="radio" id="boa" name="userSatisfaction" value="boa">
+                    <label for="boa">Boa</label>
+                    <br>
+                    <input type="radio" id="regular" name="userSatisfaction" value="regular">
+                    <label for="regular">Regular</label>
+                    <br>
+                    <input type="radio" id="ruim" name="userSatisfaction" value="ruim">
+                    <label for="ruim">Ruim</label>
+
+                    <br>
+                    <label for="comentary">Escreva sua opinião:</label>
+                    <!-- A tag textarea é utilizada para um campo maior, que possibilita a inserção de texto e o ajuste do tamanho da caixa. -->
+                    <textarea name="userComentary" id="comentary" placeholder="Digite aqui sua opinião..."></textarea>
+
+                </fieldset>
+
+                <button type="submit" aria-label="Enviar dados do formulário">Enviar</button>
+                <button type="reset" aria-label="Limpar dados do formulário">Limpar</button>
+
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
